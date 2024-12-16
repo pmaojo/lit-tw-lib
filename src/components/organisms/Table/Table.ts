@@ -1,6 +1,6 @@
 // src/components/atoms/Table/Table.ts
 import { LitElement, html } from 'lit';
-import { property } from 'lit/decorators.js';
+import { property, customElement } from 'lit/decorators.js';
 
 interface TableColumn {
   key: string;
@@ -18,7 +18,7 @@ interface TableProps {
   bordered?: boolean;
 }
 
-@Component('custom-table')
+@customElement('custom-table')
 export class Table extends LitElement {
   @property({ type: Array }) columns: TableColumn[] = [];
   @property({ type: Array }) data: Record<string, any>[] = [];
