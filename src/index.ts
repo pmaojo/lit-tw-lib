@@ -44,4 +44,4 @@ export * from './components/organisms/Carousel/Carousel';
 export * from './components/pages/LandingPage/LandingPage';
 
 // Base
-export * from './base/BaseComponent';
+export * from './components/base/BaseComponent';
