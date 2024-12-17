@@ -1,24 +1,25 @@
-// src/components/atoms/Button/BaseButton.ts
+// src/components/atoms/Button/base/BaseButton.ts
 import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators.js';
 
 export abstract class BaseButton extends LitElement {
   @property({ type: Boolean }) disabled = false;
-  @property({ type: String }) type: 'button' | 'submit' = 'button';
   @property({ type: String }) size: 'sm' | 'md' | 'lg' = 'md';
+  @property({ type: String }) type: 'button' | 'submit' = 'button';
 
   createRenderRoot() {
     return this;
   }
 
-  protected abstract getVariantClasses(): string;
+  protected abstract getVariantClasses(): string;  // Método abstracto
 
   protected getSizeClasses(): string {
-    return {
+    const sizes = {
       sm: 'px-2 py-1 text-sm',
       md: 'px-4 py-2',
       lg: 'px-6 py-3 text-lg'
-    }[this.size];
+    };
+    return sizes[this.size];
   }
 
   render() {
